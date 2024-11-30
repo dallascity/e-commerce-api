@@ -154,3 +154,19 @@
 [stacktrace]
 #0 {main}
 "} 
+[2024-11-30 10:17:34] local.ERROR: syntax error, unexpected token "public", expecting end of file {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"public\", expecting end of file at C:\\Users\\eymen\\Desktop\\Eymennavdarcase\\app\\Models\\Product.php:16)
+[stacktrace]
+#0 {main}
+"} 
+[2024-11-30 10:17:38] local.ERROR: syntax error, unexpected token "public", expecting end of file {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"public\", expecting end of file at C:\\Users\\eymen\\Desktop\\Eymennavdarcase\\app\\Models\\Product.php:16)
+[stacktrace]
+#0 {main}
+"} 
+[2024-11-30 10:17:49] local.ERROR: syntax error, unexpected token "public", expecting end of file {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"public\", expecting end of file at C:\\Users\\eymen\\Desktop\\Eymennavdarcase\\app\\Models\\Product.php:16)
+[stacktrace]
+#0 {main}
+"} 
+[2024-11-30 10:18:33] local.ERROR: syntax error, unexpected token "public", expecting end of file {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"public\", expecting end of file at C:\\Users\\eymen\\Desktop\\Eymennavdarcase\\app\\Models\\Product.php:16)
+[stacktrace]
+#0 {main}
+"} 
