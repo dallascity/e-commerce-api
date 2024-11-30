@@ -11,10 +11,10 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next)
     {
         if (!Auth::check()) {
-            return response()->json(['error' => 'Unauthorized. Please log in.'], 401);
+            return response()->json(['error' => 'Yetkisiz giriş. Lütfen giriş yapin.'], 401);
         }
         if (Auth::user()->role !== 'admin') {
-            return response()->json(['error' => 'Unauthorized. Admin access only.'], 403);
+            return response()->json(['error' => 'Yetkisiz giriş. Sadece Admin.'], 403);
         }
         return $next($request);
     }

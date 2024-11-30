@@ -11,8 +11,10 @@ class Product extends Model
     use HasFactory, SoftDeletes;
 
     // Doldurulabilir alanlar
-    protected $fillable = ['name', 'price', 'stock'];
-
+    protected $fillable = ['name', 'price', 'stock', 'image', 'description'];
+    protected $hidden = [
+        'deleted_at',
+    ];
     // İlişkiler
     public function cartItems()
     {
