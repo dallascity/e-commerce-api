@@ -40,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'api' => [
+            'driver' => 'jwt', // JWT Driver'ını kullanın
+            'provider' => 'users',
+            'hash' => false,
+        ],
     ],
 
     /*

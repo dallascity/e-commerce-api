@@ -16,7 +16,7 @@ use App\Http\Controllers\Api\OrderController;
 Route::prefix('auth')->group(function () {
     Route::post('/register', [AuthController::class, 'register']);
     Route::post('/login', [AuthController::class, 'login']);
-    Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
+    Route::post('/logout', [AuthController::class, 'logout'])->middleware(['auth:api', 'token.check']);
 });
 
 /*
@@ -24,12 +24,13 @@ Route::prefix('auth')->group(function () {
 | Ürün İşlemleri
 |--------------------------------------------------------------------------
 */
+
 Route::prefix('products')->group(function () {
     Route::get('/', [ProductController::class, 'index']);
     Route::get('/{id}', [ProductController::class, 'show']);
-    Route::post('/', [ProductController::class, 'store'])->middleware('auth:sanctum', 'admin');
-    Route::put('/{id}', [ProductController::class, 'update'])->middleware('auth:sanctum', 'admin');
-    Route::delete('/{id}', [ProductController::class, 'destroy'])->middleware('auth:sanctum', 'admin');
+    Route::post('/', [ProductController::class, 'store'])->middleware(['auth:api', 'admin']);
+    Route::put('/{id}', [ProductController::class, 'update'])->middleware(['auth:api', 'admin']);
+    Route::delete('/{id}', [ProductController::class, 'destroy'])->middleware(['auth:api', 'admin']);
 });
 
 /*
@@ -37,7 +38,8 @@ Route::prefix('products')->group(function () {
 | Sepet İşlemleri
 |--------------------------------------------------------------------------
 */
-Route::prefix('cart')->middleware('auth:sanctum')->group(function () {
+
+Route::prefix('cart')->middleware('auth:api')->group(function () {
     Route::get('/', [CartController::class, 'index']);
     Route::post('/items', [CartController::class, 'store']);
     Route::put('/items/{id}', [CartController::class, 'update']);
@@ -49,7 +51,8 @@ Route::prefix('cart')->middleware('auth:sanctum')->group(function () {
 | Sipariş İşlemleri
 |--------------------------------------------------------------------------
 */
-Route::prefix('orders')->middleware('auth:sanctum')->group(function () {
+
+Route::prefix('orders')->middleware('auth:api')->group(function () {
     Route::post('/', [OrderController::class, 'store']);
     Route::get('/', [OrderController::class, 'index']);
     Route::get('/{id}', [OrderController::class, 'show']);

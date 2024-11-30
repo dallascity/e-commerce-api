@@ -3,60 +3,44 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\api\ApiController;
+use App\Http\Requests\api\LoginRequest;
+use App\Http\Requests\api\RegisterRequest;
 use Illuminate\Http\Request;
+use App\Services\AuthService;
 
 class AuthController extends ApiController
 {
-
-    public function register(Request $request)
+    protected AuthService $authService;
+    public function __construct(AuthService $authService)
     {
-        // Dummy response, gerçek veritabanı işlemleri buraya eklenebilir
-        $userData = [
-            'id' => 1,
-            'name' => 'Eymen',
-            'email' => 'eymen@example.com',
-        ];
-
-        return $this->sendSuccess($userData, 201); // Success response
+        $this->authService = $authService;
     }
 
-    public function login(Request $request)
-    {
-        // Dummy response, gerçek kimlik doğrulama buraya eklenebilir
-        $tokenData = [
-            'token' => 'exampleToken123456789',
-            'token_type' => 'Bearer',
-            'expires_in' => 3600,
-        ];
 
-        return $this->sendSuccess($tokenData, 200); // Success response
+    public function register(RegisterRequest $request)
+    {
+        // dd($request->all());
+        $data = $this->authService->register($request->validated());
+        return $this->sendSuccess($data, 201);
+    }
+
+    public function login(LoginRequest $request)
+    {
+        try {
+            $data = $this->authService->login($request->validated());
+            return $this->sendSuccess($data, 200);
+        } catch (\Exception $e) {
+            return $this->sendError(['message' => $e->getMessage()], $e->getCode());
+        }
     }
 
     public function logout(Request $request)
     {
-        // Dummy response, oturum kapatma işlemi buraya eklenebilir
-        return $this->sendSuccess('User logged out successfully', 200); // Success response
-    }
-
-    /**
-     * Success Response
-     */
-    public function sendSuccess($data, $code = 200)
-    {
-        return response()->json([
-            'success' => true,
-            'data' => $data,
-        ], $code);
-    }
-
-    /**
-     * Error Response
-     */
-    public function sendError($errors = [], $code = 400)
-    {
-        return response()->json([
-            'success' => false,
-            'errors' => $errors,
-        ], $code);
+        try {
+            $this->authService->logout();
+            return $this->sendSuccess(['message' => 'Çıkış yapıldı.'], 200);
+        } catch (\Exception $e) {
+            return $this->sendError(['message' => 'Çıkış işlemi sırasında bir hata oluştu.'], 500);
+        }
     }
 }

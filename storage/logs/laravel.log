@@ -251,3 +251,41 @@
 #25 /var/www/html/artisan(13): Illuminate\\Foundation\\Application->handleCommand(Object(Symfony\\Component\\Console\\Input\\ArgvInput))
 #26 {main}
 "} 
+[2024-11-30 11:35:01] local.ERROR: syntax error, unexpected token "namespace", expecting "function" or "const" {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): syntax error, unexpected token \"namespace\", expecting \"function\" or \"const\" at C:\\Users\\eymen\\Desktop\\Eymennavdarcase\\app\\Models\\User.php:50)
+[stacktrace]
+#0 {main}
+"} 
+[2024-11-30 12:21:34] local.ERROR: Uncaught Error: Interface "App\Models\JWTSubject" not found in C:\Users\eymen\Desktop\Eymennavdarcase\app\Models\User.php:10
+Stack trace:
+#0 C:\Users\eymen\Desktop\Eymennavdarcase\vendor\composer\ClassLoader.php(576): include()
+#1 C:\Users\eymen\Desktop\Eymennavdarcase\vendor\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\Users\\eymen\\...')
+#2 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Models\\User')
+#3 Command line code(1): class_exists('App\\Models\\User')
+#4 [internal function]: {closure}('App\\Models\\User')
+#5 Command line code(1): array_filter(Array, Object(Closure))
+#6 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught Error: Interface \"App\\Models\\JWTSubject\" not found in C:\\Users\\eymen\\Desktop\\Eymennavdarcase\\app\\Models\\User.php:10
+Stack trace:
+#0 C:\\Users\\eymen\\Desktop\\Eymennavdarcase\\vendor\\composer\\ClassLoader.php(576): include()
+#1 C:\\Users\\eymen\\Desktop\\Eymennavdarcase\\vendor\\composer\\ClassLoader.php(427): Composer\\Autoload\\{closure}('C:\\\\Users\\\\eymen\\\\...')
+#2 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Models\\\\User')
+#3 Command line code(1): class_exists('App\\\\Models\\\\User')
+#4 [internal function]: {closure}('App\\\\Models\\\\User')
+#5 Command line code(1): array_filter(Array, Object(Closure))
+#6 {main}
+  thrown at C:\\Users\\eymen\\Desktop\\Eymennavdarcase\\app\\Models\\User.php:10)
+[stacktrace]
+#0 {main}
+"} 
+[2024-11-30 12:21:39] local.ERROR: Uncaught Error: Interface "App\Models\JWTSubject" not found in C:\Users\eymen\Desktop\Eymennavdarcase\app\Models\User.php:10
+Stack trace:
+#0 Command line code(1): include_once()
+#1 {main}
+  thrown {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Uncaught Error: Interface \"App\\Models\\JWTSubject\" not found in C:\\Users\\eymen\\Desktop\\Eymennavdarcase\\app\\Models\\User.php:10
+Stack trace:
+#0 Command line code(1): include_once()
+#1 {main}
+  thrown at C:\\Users\\eymen\\Desktop\\Eymennavdarcase\\app\\Models\\User.php:10)
+[stacktrace]
+#0 {main}
+"} 
