@@ -56,6 +56,8 @@ Aşağıdaki adımları izleyerek projeyi kurabilir ve çalıştırabilirsiniz.
 Projenin Docker konteynerini başlatmak için:
 
 ```bash
+docker-compose up --build
+
 docker-compose up -d
 ```
 
@@ -66,6 +68,14 @@ php artisan storage:link
 ```
 
 ### 3. Veritabanı Migrasyonu
+
+-   İlk Önce Laravel Containerinin İçine Girin
+
+```bash
+docker exec -it laravel_app bash
+```
+
+-   Daha Sonra
 
 ```bash
 php artisan migrate
