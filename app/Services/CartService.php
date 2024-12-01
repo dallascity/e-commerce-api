@@ -60,7 +60,7 @@ class CartService
     public function updateItem($userId, $productId, $quantity)
     {
         $cart = $this->getCart($userId);
-        $cartItem = $cart->where('status', 0)->items()->where('product_id', $productId)->first();
+        $cartItem = $cart->items()->where('product_id', $productId)->first();
 
         if (!$cartItem) {
             throw new \Exception('Sepette böyle bir ürün bulunamadı.');

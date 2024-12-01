@@ -99,7 +99,7 @@
 					"response": []
 				},
 				{
-					"name": "Logout",
+					"name": "Logout (tokenli)",
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -168,7 +168,7 @@
 								{
 									"key": "image",
 									"type": "file",
-									"src": "postman-cloud:///1efaf377-1942-4110-8694-2a7db736b591"
+									"src": []
 								},
 								{
 									"key": "description",
@@ -218,19 +218,17 @@
 								{
 									"key": "price",
 									"value": "11",
-									"type": "text",
-									"disabled": true
+									"type": "text"
 								},
 								{
 									"key": "stock",
 									"value": "55",
-									"type": "text",
-									"disabled": true
+									"type": "text"
 								},
 								{
 									"key": "image",
 									"type": "file",
-									"src": "postman-cloud:///1efaf377-1942-4110-8694-2a7db736b591",
+									"src": [],
 									"disabled": true
 								},
 								{
@@ -262,7 +260,7 @@
 			]
 		},
 		{
-			"name": "Sepet İşlemleri",
+			"name": "Sepet İşlemleri (tokenli)",
 			"item": [
 				{
 					"name": "Index Cart_İtems",
@@ -270,7 +268,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MzMwNjEzODIsImV4cCI6MTczMzA2NDk4MiwibmJmIjoxNzMzMDYxMzgyLCJqdGkiOiJPTFAySkhjeW5LWktwN0M5Iiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.hdZZmtloOp2Re29426PDSKfB29pAr1YcQCNxzrPjhz4"
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MzMwNzQ5NDIsImV4cCI6MTczMzA3ODU0MiwibmJmIjoxNzMzMDc0OTQyLCJqdGkiOiJOZGh0NlpFNVdubHVkbFh4Iiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.s6qs4tAYZElQsTUBwEfgjhiAJhVUeIqO5jXY_Ig-BmI"
 							}
 						},
 						"method": "GET",
@@ -285,7 +283,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2F1dGgvcmVnaXN0ZXIiLCJpYXQiOjE3MzMwNTk4NDgsImV4cCI6MTczMzA2MzQ0OCwibmJmIjoxNzMzMDU5ODQ4LCJqdGkiOiJYVzFqcnhhVzZFMjZsNkJYIiwic3ViIjoiMyIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.NXCweUaewldhUX-HqnH6S6hr4fBYg2uAoldSH8wGAPo"
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MzMwNzQ5NDIsImV4cCI6MTczMzA3ODU0MiwibmJmIjoxNzMzMDc0OTQyLCJqdGkiOiJOZGh0NlpFNVdubHVkbFh4Iiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.s6qs4tAYZElQsTUBwEfgjhiAJhVUeIqO5jXY_Ig-BmI"
 							}
 						},
 						"method": "POST",
@@ -330,7 +328,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MzMwNTY2NTksImV4cCI6MTczMzA2MDI1OSwibmJmIjoxNzMzMDU2NjU5LCJqdGkiOiJUVzhSandVVHFOMmlSYW8wIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Hay9gmyjrWAv6R18Jn4N2XHvBBIum6U3xyV9rMXFRQg"
+								"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MzMwNzQ5NDIsImV4cCI6MTczMzA3ODU0MiwibmJmIjoxNzMzMDc0OTQyLCJqdGkiOiJOZGh0NlpFNVdubHVkbFh4Iiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.s6qs4tAYZElQsTUBwEfgjhiAJhVUeIqO5jXY_Ig-BmI"
 							}
 						},
 						"method": "PUT",
@@ -344,7 +342,7 @@
 								}
 							}
 						},
-						"url": "{{URL}}cart/items/50"
+						"url": "{{URL}}cart/items/2"
 					},
 					"response": []
 				},
@@ -366,7 +364,7 @@
 			]
 		},
 		{
-			"name": "Sipariş İşlemleri",
+			"name": "Sipariş İşlemleri (tokenli)",
 			"item": [
 				{
 					"name": "Add Order",

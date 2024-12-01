@@ -102,8 +102,10 @@ http://localhost:8081
 ADMİN = Admin@gmail.com / 123456789
 USER = 'test@gmail.com' / '123456789'
 
-### 6. Postman İçe Aktarma
+### 6. Postman & İçe Aktarma
 
 -   POSTMAN Klasörü İçindeki "EymenNavdarCaseAPI.postman_collection.json"
 -   Postman'de File > Import seçeneğine tıklayın.
 -   JSON dosyasını seçerek koleksiyonu yükleyebilirsiniz.
+-   İlgili Parametreler Body Kısmındadır.
+-   Bearer JWT Token Kullanılmıştır.
