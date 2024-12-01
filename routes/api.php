@@ -40,6 +40,7 @@ Route::prefix('products')->middleware('throttle:10,1')->group(function () {
 */
 
 Route::prefix('cart')->middleware(['token.check', 'throttle:10,1'])->group(function () {
+    Route::get('/items', [CartController::class, 'index']);
     Route::post('/items', [CartController::class, 'store']);
     Route::put('/items/{id}', [CartController::class, 'update']);
     Route::delete('/items/{id}', [CartController::class, 'destroy']);

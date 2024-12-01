@@ -17,10 +17,8 @@ class ProductService
     }
     public function storeProduct(array $data)
     {
-        // Resmi kaydet
         $imagePath = $data['image']->store('products', 'public');
 
-        // Ürünü veritabanına kaydet
         return Product::create([
             'name' => $data['name'],
             'price' => $data['price'],

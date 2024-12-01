@@ -7,10 +7,11 @@ use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
-    public function sendSuccess($data, $code = 200)
+    public function sendSuccess($data, $code = 200, $message = null)
     {
         return response()->json([
             'success' => true,
+            'message' => $message,
             'data' => $data,
         ], $code);
     }

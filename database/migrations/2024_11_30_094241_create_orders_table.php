@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Kullanıcı ile ilişki
-            $table->decimal('total_amount', 10, 2); // Toplam tutar
-            $table->string('status')->default('pending'); // 'pending', 'completed', 'cancelled'
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->decimal('total_amount', 10, 2);
+            $table->foreignId('cart_id')->constrained()->onDelete('cascade');
+            $table->string('status')->default('pending');
             $table->timestamps();
-            $table->softDeletes(); // deleted_at sütunu
+            $table->softDeletes();
         });
     }
 

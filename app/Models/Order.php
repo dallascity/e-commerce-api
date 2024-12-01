@@ -9,8 +9,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Order extends Model
 {
     use HasFactory, SoftDeletes;
+    protected $fillable = ['user_id', 'cart_id', 'total_amount', 'status'];
 
-    protected $fillable = ['user_id', 'total_amount', 'status'];
+    public function cart()
+    {
+        return $this->belongsTo(Cart::class);
+    }
 
     public function user()
     {
