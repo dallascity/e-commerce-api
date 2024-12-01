@@ -1,0 +1,565 @@
+{
+	"info": {
+		"_postman_id": "dffc26fb-2b09-4377-9120-17c98b4d0ce2",
+		"name": "EymenNavdarCase",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37271206"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "name",
+								"value": "test",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "email",
+								"value": "teset@gmail.com",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "password",
+								"value": "123",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "password_confirmation",
+								"value": "123",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test4@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "12345678",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}auth/register",
+							"host": [
+								"{{URL}}auth"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "user@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}auth/login",
+							"host": [
+								"{{URL}}auth"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MzMwNjEzODIsImV4cCI6MTczMzA2NDk4MiwibmJmIjoxNzMzMDYxMzgyLCJqdGkiOiJPTFAySkhjeW5LWktwN0M5Iiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.hdZZmtloOp2Re29426PDSKfB29pAr1YcQCNxzrPjhz4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}auth/logout",
+							"host": [
+								"{{URL}}auth"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ürün İşlemleri",
+			"item": [
+				{
+					"name": "Index",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}products",
+							"host": [
+								"{{URL}}products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}products/1",
+							"host": [
+								"{{URL}}products"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add (Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2F1dGgvcmVnaXN0ZXIiLCJpYXQiOjE3MzMwNTk4NDgsImV4cCI6MTczMzA2MzQ0OCwibmJmIjoxNzMzMDU5ODQ4LCJqdGkiOiJYVzFqcnhhVzZFMjZsNkJYIiwic3ViIjoiMyIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.NXCweUaewldhUX-HqnH6S6hr4fBYg2uAoldSH8wGAPo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "UAT",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "5252",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "44",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1efaf377-1942-4110-8694-2a7db736b591"
+								},
+								{
+									"key": "description",
+									"value": "AÇIKLAMA MERHABA DÜNYA",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}products",
+							"host": [
+								"{{URL}}products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update (Admin)",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2F1dGgvcmVnaXN0ZXIiLCJpYXQiOjE3MzMwNTk4NDgsImV4cCI6MTczMzA2MzQ0OCwibmJmIjoxNzMzMDU5ODQ4LCJqdGkiOiJYVzFqcnhhVzZFMjZsNkJYIiwic3ViIjoiMyIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.NXCweUaewldhUX-HqnH6S6hr4fBYg2uAoldSH8wGAPo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "__method",
+									"value": "PUT",
+									"description": "Postmanda Form-data PUT metodunu desteklemiyor resim olduğu için bunu sonradan put yaparak (raw) yapabilirsiniz",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "merasdfafd",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "11",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "stock",
+									"value": "55",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1efaf377-1942-4110-8694-2a7db736b591",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "Updated heyy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}products/5",
+							"host": [
+								"{{URL}}products"
+							],
+							"path": [
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete (Admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2F1dGgvcmVnaXN0ZXIiLCJpYXQiOjE3MzMwNTk4NDgsImV4cCI6MTczMzA2MzQ0OCwibmJmIjoxNzMzMDU5ODQ4LCJqdGkiOiJYVzFqcnhhVzZFMjZsNkJYIiwic3ViIjoiMyIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.NXCweUaewldhUX-HqnH6S6hr4fBYg2uAoldSH8wGAPo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}products/54",
+							"host": [
+								"{{URL}}products"
+							],
+							"path": [
+								"54"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sepet İşlemleri",
+			"item": [
+				{
+					"name": "Index Cart_İtems",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MzMwNjEzODIsImV4cCI6MTczMzA2NDk4MiwibmJmIjoxNzMzMDYxMzgyLCJqdGkiOiJPTFAySkhjeW5LWktwN0M5Iiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.hdZZmtloOp2Re29426PDSKfB29pAr1YcQCNxzrPjhz4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}cart/items",
+							"host": [
+								"{{URL}}cart"
+							],
+							"path": [
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Cart_İtems",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2F1dGgvcmVnaXN0ZXIiLCJpYXQiOjE3MzMwNTk4NDgsImV4cCI6MTczMzA2MzQ0OCwibmJmIjoxNzMzMDU5ODQ4LCJqdGkiOiJYVzFqcnhhVzZFMjZsNkJYIiwic3ViIjoiMyIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.NXCweUaewldhUX-HqnH6S6hr4fBYg2uAoldSH8wGAPo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "product_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}cart/items",
+							"host": [
+								"{{URL}}cart"
+							],
+							"path": [
+								"items"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Cart_İtems",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MzMwNTY2NTksImV4cCI6MTczMzA2MDI1OSwibmJmIjoxNzMzMDU2NjU5LCJqdGkiOiJUVzhSandVVHFOMmlSYW8wIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Hay9gmyjrWAv6R18Jn4N2XHvBBIum6U3xyV9rMXFRQg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\": 4\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}cart/items/50",
+							"host": [
+								"{{URL}}cart"
+							],
+							"path": [
+								"items",
+								"50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Cart_İtems",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MzMwNTY2NTksImV4cCI6MTczMzA2MDI1OSwibmJmIjoxNzMzMDU2NjU5LCJqdGkiOiJUVzhSandVVHFOMmlSYW8wIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Hay9gmyjrWAv6R18Jn4N2XHvBBIum6U3xyV9rMXFRQg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}cart/items/50",
+							"host": [
+								"{{URL}}cart"
+							],
+							"path": [
+								"items",
+								"50"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sipariş İşlemleri",
+			"item": [
+				{
+					"name": "Add Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MzMwNjEzODIsImV4cCI6MTczMzA2NDk4MiwibmJmIjoxNzMzMDYxMzgyLCJqdGkiOiJPTFAySkhjeW5LWktwN0M5Iiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.hdZZmtloOp2Re29426PDSKfB29pAr1YcQCNxzrPjhz4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}orders",
+							"host": [
+								"{{URL}}orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2F1dGgvcmVnaXN0ZXIiLCJpYXQiOjE3MzMwNTk4NDgsImV4cCI6MTczMzA2MzQ0OCwibmJmIjoxNzMzMDU5ODQ4LCJqdGkiOiJYVzFqcnhhVzZFMjZsNkJYIiwic3ViIjoiMyIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.NXCweUaewldhUX-HqnH6S6hr4fBYg2uAoldSH8wGAPo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}orders",
+							"host": [
+								"{{URL}}orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL2F1dGgvcmVnaXN0ZXIiLCJpYXQiOjE3MzMwNTk4NDgsImV4cCI6MTczMzA2MzQ0OCwibmJmIjoxNzMzMDU5ODQ4LCJqdGkiOiJYVzFqcnhhVzZFMjZsNkJYIiwic3ViIjoiMyIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.NXCweUaewldhUX-HqnH6S6hr4fBYg2uAoldSH8wGAPo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}orders/7",
+							"host": [
+								"{{URL}}orders"
+							],
+							"path": [
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

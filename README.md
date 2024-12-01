@@ -1,13 +1,13 @@
 # Eymen Navdar Case API
 
-Bu proje, Laravel kullanılarak geliştirilmiş bir e-ticaret API'sidir. Kullanıcı yönetimi, ürün işlemleri, sepet yönetimi ve sipariş yönetimi gibi temel özellikleri içermektedir. Projede JWT tabanlı kimlik doğrulama ve Rate Limiting gibi modern güvenlik ve performans yöntemleri uygulanmıştır.
+Bu proje, Laravel 11 kullanılarak geliştirilmiş bir e-ticaret API'sidir. Postman adlı klasörün içinde test edebilmeniz için hazır ayarlı kayıt bulunmaktadır.
 
 ## 🚀 Kullanılan Teknolojiler
 
 -   **Laravel 11**: PHP framework.
 -   **Docker**: Konteyner tabanlı geliştirme ortamı.
 -   **PHP**: Backend geliştirme dili.
--   **RESTful API**: API tasarımında kullanılan mimari.
+-   **RESTful API**
 -   **JWT (JSON Web Token)**: Kimlik doğrulama yöntemi.
 -   **Rate Limiting**: Dakikada maksimum 10 istek sınırı.
 
@@ -72,3 +72,28 @@ php artisan migrate
 
 php artisan migrate:refresh --seed
 ```
+
+### 4. Localhost
+
+Localhost Adresi:
+
+```bash
+http://localhost:8080
+```
+
+PhpMyAdmin Adresi (Kullanıcı Adı = User Şifre = 123) :
+
+```bash
+http://localhost:8081
+```
+
+### 5. Test Hesapları
+
+ADMİN = Admin@gmail.com / 123456789
+USER = 'test@gmail.com' / '123456789'
+
+### 6. Postman İçe Aktarma
+
+-   POSTMAN Klasörü İçindeki "EymenNavdarCaseAPI.postman_collection.json"
+-   Postman'de File > Import seçeneğine tıklayın.
+-   JSON dosyasını seçerek koleksiyonu yükleyebilirsiniz.
