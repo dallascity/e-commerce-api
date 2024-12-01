@@ -107,5 +107,6 @@ USER = 'test@gmail.com' / '123456789'
 -   POSTMAN Klasörü İçindeki "EymenNavdarCaseAPI.postman_collection.json"
 -   Postman'de File > Import seçeneğine tıklayın.
 -   JSON dosyasını seçerek koleksiyonu yükleyebilirsiniz.
+-   POSTMAN'daki {{URL}} Değişkeni http://localhost:8080/api/ 'dir .
 -   İlgili Parametreler Body Kısmındadır.
 -   Bearer JWT Token Kullanılmıştır.
