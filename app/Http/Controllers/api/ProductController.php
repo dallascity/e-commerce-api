@@ -12,6 +12,8 @@ use Illuminate\Http\Request;
 
 class ProductController extends ApiController
 {
+
+
     protected $productService;
 
     public function __construct(ProductService $productService)

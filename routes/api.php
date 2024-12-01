@@ -6,11 +6,6 @@ use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\CartController;
 use App\Http\Controllers\Api\OrderController;
 
-/*
-|--------------------------------------------------------------------------
-| Authentication
-|--------------------------------------------------------------------------
-*/
 
 Route::prefix('auth')->middleware('throttle:10,1')->group(function () {
     Route::post('/register', [AuthController::class, 'register']);
