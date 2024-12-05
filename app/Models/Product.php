@@ -12,10 +12,8 @@ class Product extends Model
 
     // Doldurulabilir alanlar
     protected $fillable = ['name', 'price', 'stock', 'image', 'description'];
-    protected $hidden = [
-        'deleted_at',
-    ];
-    // İlişkiler
+    protected $hidden = ['deleted_at'];
+
     public function cartItems()
     {
         return $this->hasMany(CartItem::class);

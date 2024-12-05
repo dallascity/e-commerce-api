@@ -11,10 +11,8 @@ class Cart extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable = ['user_id', 'status'];
-    protected $hidden = [
-        'deleted_at',
-    ];
+    protected $fillable = ['user_id', 'status', 'items_count', 'total_price', 'discount'];
+    protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
 
     public function items()
     {

@@ -15,6 +15,7 @@ class CartItem extends Model
     use SoftDeletes;
 
     protected $fillable = ['cart_id', 'product_id', 'quantity', 'price'];
+    protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
 
     public function cart()
     {

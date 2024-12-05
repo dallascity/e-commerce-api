@@ -29,7 +29,9 @@ class OrderService
         $totalAmount = $cart->items->sum(function ($item) {
             return $item->quantity * $item->product->price;
         });
-
+        if ($cart->discount > 0) {
+            $totalAmount -= $cart->discount;
+        }
 
 
         $order = Order::create([

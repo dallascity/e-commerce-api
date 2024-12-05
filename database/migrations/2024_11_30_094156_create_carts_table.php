@@ -15,6 +15,9 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->unsignedTinyInteger('status')->default(0);
+            $table->decimal('discount')->default(0);
+            $table->decimal('total_price')->default(0);
+            $table->tinyInteger('items_count')->default(0);
             $table->timestamps();
             $table->softDeletes();
         });

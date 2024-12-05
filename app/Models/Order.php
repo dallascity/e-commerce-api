@@ -11,6 +11,7 @@ class Order extends Model
     use HasFactory, SoftDeletes;
     protected $fillable = ['user_id', 'cart_id', 'total_amount', 'status'];
 
+    protected $hidden = ['updated_at', 'deleted_at'];
     public function cart()
     {
         return $this->belongsTo(Cart::class);

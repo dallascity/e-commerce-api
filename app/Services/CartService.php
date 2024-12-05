@@ -5,19 +5,45 @@ namespace App\Services;
 use App\Models\Cart;
 use App\Models\CartItem;
 use App\Models\Product;
+use App\Models\Coupon;
 
 class CartService
 {
     public function getCart($userId)
     {
+
         $cart = Cart::where('user_id', $userId)
             ->where('status', 0)
             ->with('items.product')
             ->firstOrCreate(
                 ['user_id' => $userId, 'status' => 0],
                 ['status' => 0]
-            );
+            );;
+        $this->updateCart($userId);
+        $cart = Cart::where('user_id', $userId)
+            ->where('status', 0)
+            ->with('items.product')
+            ->first();
+        return $cart;
+    }
+    public function updateCart($userId)
+    {
+        $cart = Cart::where('user_id', $userId)
+            ->where('status', 0)
+            ->with('items.product')
+            ->first();
 
+
+        $cart->total_price = $cart->items->sum(function ($item) {
+            return $item->quantity * $item->product->price;
+        });
+        $cart->items_count = $cart->items->sum('quantity');
+
+        if ($cart->discount > 0) {
+            $cart->total_price = $cart->total_price - $cart->discount;
+        }
+
+        $cart->save();
         return $cart;
     }
 
@@ -51,6 +77,9 @@ class CartService
                 'price' => $product->price * $quantity,
             ]);
         }
+
+        $this->updateCart($userId, $quantity, $product->price * $quantity);
+        $cart = $this->getCart($userId);
 
         return $cart->load('items.product');
     }
@@ -87,6 +116,8 @@ class CartService
             $cartItem->price = $product->price * $quantity;
             $cartItem->save();
         }
+        $this->updateCart($userId, $quantity, $product->price * $quantity);
+        $cart = $this->getCart($userId);
 
         return $cart->load('items.product');
     }

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\CartController;
+use App\Http\Controllers\api\CouponController;
 use App\Http\Controllers\Api\OrderController;
 
 
@@ -39,6 +40,7 @@ Route::prefix('cart')->middleware(['token.check', 'throttle:10,1'])->group(funct
     Route::post('/items', [CartController::class, 'store']);
     Route::put('/items/{id}', [CartController::class, 'update']);
     Route::delete('/items/{id}', [CartController::class, 'destroy']);
+    Route::post('/apply-coupon', [CouponController::class, 'store']);
 });
 
 /*
