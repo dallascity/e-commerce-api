@@ -116,7 +116,7 @@ class CartService
             $cartItem->price = $product->price * $quantity;
             $cartItem->save();
         }
-        $this->updateCart($userId, $quantity, $product->price * $quantity);
+        $this->updateCart($userId);
         $cart = $this->getCart($userId);
 
         return $cart->load('items.product');
