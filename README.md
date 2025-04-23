@@ -1,4 +1,4 @@
-# Eymen Navdar Case API
+# Eymen Navdar API Service
 
 Bu proje, Laravel 11 kullanılarak geliştirilmiş bir e-ticaret API'sidir. Postman adlı klasörün içinde test edebilmeniz için hazır ayarlı kayıt bulunmaktadır.
 
