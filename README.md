@@ -99,12 +99,12 @@ http://localhost:8081
 
 ### 5. Test Hesapları
 
-ADMİN = Admin@gmail.com / 123456789
-USER = 'test@gmail.com' / '123456789'
+- **Admin:** `admin@gmail.com` / `123456789`
+- **User:** `test@gmail.com` / `123456789`
 
 ### 6. Postman & İçe Aktarma
 
--   POSTMAN Klasörü İçindeki "EymenNavdarCaseAPI.postman_collection.json"
+-   POSTMAN Klasörü İçindeki "EymenNavdarCase.postman_collectionv2.json"
 -   Postman'de File > Import seçeneğine tıklayın.
 -   JSON dosyasını seçerek koleksiyonu yükleyebilirsiniz.
 -   POSTMAN'daki {{URL}} Değişkeni http://localhost:8080/api/ 'dir .
