@@ -1,0 +1,6 @@
+public/storage
+node_modules
+vendor
+.git
+.env
+storage/*.key
